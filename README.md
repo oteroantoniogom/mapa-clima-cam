@@ -1,3 +1,12 @@
+---
+title: Mapa Climático CAM
+emoji: 🗺️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # 🌍 Guía de Despliegue - Mapa Climático
 
 Esta aplicación ha sido refactorizada para ofrecer una experiencia web moderna y dos métodos de despliegue principales: **Paquete Autónomo (Docker)** y **Hosting Estático**.
