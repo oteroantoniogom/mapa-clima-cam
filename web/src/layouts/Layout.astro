@@ -1,0 +1,65 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Generador de Mapas Climáticos" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body class="bg-[#0f111a] text-slate-200 antialiased min-h-screen selection:bg-indigo-500/30 selection:text-indigo-200">
+        <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/20 blur-[120px]"></div>
+            <div class="absolute top-[20%] right-[-5%] w-[30%] h-[30%] rounded-full bg-purple-600/20 blur-[100px]"></div>
+            <div class="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-indigo-600/10 blur-[150px]"></div>
+        </div>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+    :root {
+        --font-body: 'Outfit', sans-serif;
+    }
+    body {
+        font-family: var(--font-body);
+    }
+    
+    /* Animation Utilities */
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+    }
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+    }
+    
+    @keyframes bounce-subtle {
+        0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+        50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+    }
+    .animate-bounce-subtle {
+        animation: bounce-subtle 2s infinite;
+    }
+</style>

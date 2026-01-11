@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+pandas
+geopandas
+matplotlib
+fiona
+loguru
+python-multipart
+shapely
+unidecode
+pymupdf4llm
+thefuzz
+slowapi

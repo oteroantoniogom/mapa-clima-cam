@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+pandas
+geopandas
+matplotlib
+loguru
+fiona
+python-multipart
+shapely
+unidecode
+pymupdf4llm
+spacy
+es-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/es_core_news_lg-3.7.0/es_core_news_lg-3.7.0-py3-none-any.whl
+pyinstaller 

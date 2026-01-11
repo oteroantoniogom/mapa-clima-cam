@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+bin/
+include/
+# share/ removed as well if not needed, keeping it focused
+share/
+
+# Node
+node_modules/
+dist/
+.astro/
+
+# App Specific
+uploads/*
+!uploads/.gitkeep
+*.png
+*.zip
+*.spec
+mapa.ipynb
+tmp*/
+
+# OS
+.DS_Store
+Thumbs.db

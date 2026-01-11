@@ -1,0 +1,25 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies (Host)
+node_modules
+web/node_modules
+web/.astro
+backend/venv
+backend/.venv
+backend/__pycache__
+
+# Artifacts
+web/dist
+*.zip
+*.log
+*.png
+output.png
+mapa_cam.spec
+mapa.ipynb
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore

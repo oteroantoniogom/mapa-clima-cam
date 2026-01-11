@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mapa-cam-app
+    restart: unless-stopped
+    ports:
+      - "8000:7860"
+    volumes:
+      - uploads_data:/app/uploads
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Frontend is served from root, so no BACKEND_URL needed for local monolith (defaults to relative /)
+      # If needed explicitly:
+      # - PUBLIC_BACKEND_URL=http://localhost:8000
+
+volumes:
+  uploads_data:
+
+
+networks:
+  default:
+    name: climate-net
