@@ -157,7 +157,7 @@ export default function ClimateMapApp() {
     const [resultImage, setResultImage] = useState<string | null>(null);
     const [errorDetails, setErrorDetails] = useState<string | null>(null);
     const [showConfig, setShowConfig] = useState(false);
-    const [backendUrl, setBackendUrl] = useState(import.meta.env.PUBLIC_BACKEND_URL || "http://localhost:8000");
+    const [backendUrl, setBackendUrl] = useState(import.meta.env.PUBLIC_BACKEND_URL || "");
 
     const resultRef = useRef<HTMLDivElement>(null);
 
