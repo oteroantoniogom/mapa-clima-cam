@@ -26,11 +26,13 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # CORS - Configurable origins (use env var in production)
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
+IS_WILDCARD = "*" in ALLOWED_ORIGINS
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_credentials=False if IS_WILDCARD else True,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 

@@ -179,7 +179,8 @@ export default function ClimateMapApp() {
         formData.append("pdf", pdf);
         formData.append("shp", shp);
 
-        const endpoint = `${backendUrl.replace(/\/$/, "")}/api/procesar/`;
+        const baseUrl = backendUrl || (typeof window !== "undefined" ? window.location.origin : "");
+        const endpoint = `${baseUrl.replace(/\/$/, "")}/api/procesar/`;
 
         try {
             const response = await fetch(endpoint, {
@@ -202,7 +203,7 @@ export default function ClimateMapApp() {
 
             setResultImage(imageUrl);
         } catch (err: any) {
-            setErrorDetails(err.message);
+            setErrorDetails(`${err.message} (URL: ${endpoint})`);
         } finally {
             setIsProcessing(false);
         }
